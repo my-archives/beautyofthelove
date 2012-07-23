@@ -4,16 +4,23 @@
   "description": "Beauty Of The Love ♥  美丽的爱情",
   "private": true,
   "version": "0.0.1",
-  "private": true,
+  "contributors": [
+    {
+      "name": "cfddream",
+      "email" "cfddream@gmail.com"
+    }
+  ],
   "scripts": {
     "start": "node app",
-    "heart": "node -e 'console.log(\"Beauty Of The Love ♥  美丽的爱情\")'"
+    "heart": "node -e 'console.log(\" ♥  \")'"
   },
   "dependencies": {
     "express": "3.0.0beta6",
-    "jade": "*"
+    "jade": "*",
+    "stylus": "*"
   },
   "devDependencies": {
     "supervisor": "*"
-  }
+  },
+  "main": "app.js"
 }
