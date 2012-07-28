@@ -11,7 +11,7 @@ var app = express();
 
 app.configure(function(){
   //             I LOVE YOU
-  app.set('port', process.env.PORT || 8888/*520*//*459*/);
+  app.set('port', process.env.PORT || /*8888*/520459);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
   app.use(express.favicon());
@@ -19,10 +19,10 @@ app.configure(function(){
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(app.router);
-  app.use(express.static(__dirname + '/public'));
 });
 
 app.configure('development', function(){
+  app.use(express.static(__dirname + '/public'));
   app.use(express.errorHandler());
 });
 
