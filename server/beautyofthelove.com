@@ -27,6 +27,8 @@ http {
         listen 80;
 
         server_name beautyofthelove.com www.beautyofthelove.com;
+        access_log /home/cfd/www/logs/beautyofthelove.access.log;
+        error_log /home/cfd/www/logs/beautyofthelove.error.log;
 
         if ($host = 'beautyofthelove.com' ) {
             rewrite  ^/(.*)$  http://www.beautyofthelove.com/$1 permanent;
