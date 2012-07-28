@@ -5,10 +5,7 @@
   "private": true,
   "version": "0.0.1",
   "contributors": [
-    {
-      "name": "cfddream",
-      "email" "cfddream@gmail.com"
-    }
+    { "name": "cfddream", "email": "cfddream@gmail.com" }
   ],
   "scripts": {
     "start": "node app",
@@ -21,6 +18,5 @@
   },
   "devDependencies": {
     "supervisor": "*"
-  },
-  "main": "app.js"
+  }
 }
