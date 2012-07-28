@@ -11,7 +11,7 @@ var app = express();
 
 app.configure(function(){
   //             I LOVE YOU
-  app.set('port', process.env.PORT || /*8888*/520459);
+  app.set('port', process.env.PORT || /*8888*/45920);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
   app.use(express.favicon());

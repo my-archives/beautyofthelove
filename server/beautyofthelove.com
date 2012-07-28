@@ -13,12 +13,12 @@ http {
     gzip_vary on;
     gzip_min_length  1000;
     gzip_proxied any;
-    gzip_types text/plain text/html text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+    gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
     gzip_buffers 16 8k;
 
     # proxy node express
-    upstream silly_face_society_upstream {
-      server 127.0.0.1:520459;
+    upstream beautyofthelove_upstream {
+      server 127.0.0.1:45920;
       #server 127.0.0.1:61338;
       keepalive 64;
     }
@@ -56,7 +56,7 @@ http {
           proxy_http_version 1.1;
           proxy_cache one;
           proxy_cache_key sfs$request_uri$scheme;
-          proxy_pass         http://beautyofthelove.com_upstream;
+          proxy_pass         http://beautyofthelove_upstream;
         }
     }
 }
