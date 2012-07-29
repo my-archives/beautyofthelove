@@ -3,6 +3,7 @@
 #https://www.archlinux.org/developers/
 #https://www.archlinux.org/trustedusers/
 
+#http://library.linode.com/web-servers/nginx/perl-fastcgi/arch-linux
 #http://purebacon.com/articles/arch-linux-on-linode.html
 
 ### Node.js Pages
@@ -22,6 +23,8 @@ pacman -S tzdata
 pacman -Syu
 
 pacman-key --init; pacman-key --populate archlinux
+
+# /etc/rc.conf
 
 # or edit /etc/group
 groupadd sudo
@@ -49,17 +52,26 @@ pacman -S openssl
 
 # `make`
 pacman -S make
+
 # `git`
 pacman -S git
 
+# `monit`
+pacman -S monit
+# /etc/monitrc
+# mkdir /etc/monit.d
+
 # `nginx`
 pacman -S nginx
-# /etc/nginx/config/nginx.conf
 /etc/rc.d/nginx start
 # /etc/group
 groupadd http
 # sudo chgrp http www -R
 # sudo chmod g+w www -R
+# /etc/rc.conf `deamon`
+# /etc/nginx/nginx.conf
+# mkdir /etc/nginx/sites-available
+# mkdir /etc/nginx/sites-enabled
 
 # `python2`
 pacman -S python2
