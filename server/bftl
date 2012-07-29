@@ -1,6 +1,7 @@
 #!/bin/bash
 
 #/etc/rc.d/bftl
+# ln -sf /home/cfd/www/beautyofthelove.com/server/bftl /etc/rc.d/
 
 WWW=/home/cfd/www
 DIR=$WWW/beautyofthelove.com
