@@ -7,12 +7,26 @@
       h1 {
         text-align: center;
       }
+
+      @-webkit-keyframes pound {
+        to { -webkit-transform: scale(1.4); }
+      }
+
+      @keyframes pound {
+        to { transform: scale(1.4); }
+      }
+
       .love {
+        display: inline-block;
         color: #d32232;
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+        -webkit-animation: pound .25s infinite alternate;
+        animation: pound .25s infinite alternate;
       }
     </style>
   </head>
   <body>
-    <h1>Beauty Of The Love <strong class="love">♥</strong> 美丽的爱情</h1>
+    <h1>The Beauty Of The Love <strong class="love">♥</strong> 美丽的爱情</h1>
   </body>
 </html>
