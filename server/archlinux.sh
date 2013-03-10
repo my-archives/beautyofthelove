@@ -12,18 +12,17 @@
 
 ############################## login root
 
-for key in EAE999BD F56C0C53 00F0D0F0 06361833 4FA415FA A9999C34 4CE1C13E 0F2A092B F04569AE; do
-  pacman-key --recv-keys $key
-  pacman-key --lsign-key $key
-  printf 'trustn3nquitn' | gpg --homedir /etc/pacman.d/gnupg/ --no-permission-warning --command-fd 0 --edit-key $key
-done
-
-pacman -S tzdata
+pacman-key --init; pacman-key --populate archlinux
 
 pacman -Syu
 
-pacman-key --init; pacman-key --populate archlinux
+pacman -S tzdata
 
+#for key in EAE999BD F56C0C53 00F0D0F0 06361833 4FA415FA A9999C34 4CE1C13E 0F2A092B F04569AE; do
+#  pacman-key --recv-keys $key
+#  pacman-key --lsign-key $key
+#  printf 'trustn3nquitn' | gpg --homedir /etc/pacman.d/gnupg/ --no-permission-warning --command-fd 0 --edit-key $key
+#done
 # /etc/rc.conf
 
 # or edit /etc/group
@@ -31,6 +30,7 @@ groupadd sudo
 
 # or useradd
 adduser
+#ssh-keygen -t dsa -C user@host
 #ssh-copy-id -i id_rsa.pub user@host
 
 # edit /etc/sudoers
@@ -87,15 +87,12 @@ pacman -S nodejs
 npm uninstall -g npm
 
 ############################# login user
+mkdir ~/bin
+ln -s /usr/bin/python2 ~/bin/python
 
 echo 'export TZ="Asia/Shanghai"' >> ~/.profile
-echo 'export PATH="/home/cfd/bin:$PATH"' >> ~/.profile
-echo 'export NODE_PATH="/home/cfd/lib/node_modules"' >> ~/.profile
+echo 'export PATH="$HOME/bin:$PATH"' >> ~/.profile
 echo 'export PYTHON=`which python2`' >> ~/.profile
-echo 'prefiX = /home/cfd' >> ~/.npmrc
-
-git clone https://github.com/joyent/node.git
-make install
 
 # #
 # # ~/.bash_profile
@@ -104,13 +101,20 @@ make install
 #  [[ -f ~/.bashrc ]] && . ~/.bashrc
 #  [[ -f ~/.profile ]] && . ~/.profile
 
+
+mkdir ~/{opt,repos}
+cd ~/repos
+# git clone https://github.com/joyent/node.git
+# cd node
+# ./configure --prefix=~/opt/node
+# make && make install
+echo 'export PATH="$HOME/opt/node/bin:$PATH"' >> ~/.profile
+echo 'export NODE_PATH="$HOME/opt/node/lib/node_modules"' >> ~/.profile
+
 ############################# relogin
 npm prefix -g
-# /home/cfd
 npm bin -g
-# /home/cfd/bin
 npm root -g
-# /home/cfd/lib/node_modules
 echo $NODE_PATH
 
 # install modules
