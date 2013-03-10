@@ -66,12 +66,15 @@ pacman -S nginx
 /etc/rc.d/nginx start
 # /etc/group
 groupadd http
-# sudo chgrp http www -R
-# sudo chmod g+w www -R
+# namei -om $HOME
+# chmod o+x $HOME
+# sudo chgrp http sites -R
+# sudo chmod g+w sites -R
 # /etc/rc.conf `deamon`
 # /etc/nginx/nginx.conf
 # mkdir /etc/nginx/sites-available
 # mkdir /etc/nginx/sites-enabled
+# sudo systemctlre start nginx.service
 
 # `python2`
 pacman -S python2
