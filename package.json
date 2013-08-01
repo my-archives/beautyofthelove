@@ -5,7 +5,10 @@
   "private": true,
   "version": "0.0.1",
   "contributors": [
-    { "name": "cfddream", "email": "cfddream@gmail.com" }
+    {
+      "name": "cfddream",
+      "email": "cfddream@gmail.com"
+    }
   ],
   "scripts": {
     "start": "node app",
@@ -17,6 +20,9 @@
     "stylus": "*"
   },
   "devDependencies": {
-    "supervisor": "*"
+    "supervisor": "*",
+    "express": "~3.0.0-beta6",
+    "stylus": "~0.35.1",
+    "jade": "~0.34.1"
   }
 }
